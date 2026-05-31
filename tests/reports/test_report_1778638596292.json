@@ -1,0 +1,211 @@
+{
+  "timestamp": "2026-05-13T02:16:36.281Z",
+  "tests": [
+    {
+      "name": "光强-速率曲线呈现光饱和效应",
+      "status": "PASS",
+      "details": "低光强线性增长: 0 → 20 (增长率: Infinity%)",
+      "time": "2026-05-13T02:16:36.282Z"
+    },
+    {
+      "name": "高光合强度斜率降低(饱和效应)",
+      "status": "FAIL",
+      "details": "线性区斜率: 0.500, 饱和区斜率: 0.375",
+      "time": "2026-05-13T02:16:36.282Z"
+    },
+    {
+      "name": "蓝光(430nm)效率 > 绿光(550nm)效率",
+      "status": "PASS",
+      "details": "蓝光: 1.000, 绿光: 0.400",
+      "time": "2026-05-13T02:16:36.283Z"
+    },
+    {
+      "name": "红光(680nm)效率 > 绿光(550nm)效率",
+      "status": "PASS",
+      "details": "红光: 1.000, 绿光: 0.400",
+      "time": "2026-05-13T02:16:36.283Z"
+    },
+    {
+      "name": "存在两个吸收峰(红峰和蓝峰)",
+      "status": "PASS",
+      "details": "蓝峰效率: 1.000, 红峰效率: 1.000",
+      "time": "2026-05-13T02:16:36.283Z"
+    },
+    {
+      "name": "水的光解: 4个电子产生1个O₂",
+      "status": "PASS",
+      "details": "电子/O₂比率: 4",
+      "time": "2026-05-13T02:16:36.284Z"
+    },
+    {
+      "name": "PSII释放质子到类囊体腔",
+      "status": "PASS",
+      "details": "每O₂产H⁺数: 2",
+      "time": "2026-05-13T02:16:36.284Z"
+    },
+    {
+      "name": "ATP合成需要质子梯度驱动",
+      "status": "PASS",
+      "details": "化学渗透模型实现",
+      "time": "2026-05-13T02:16:36.284Z"
+    },
+    {
+      "name": "所有数值字段类型正确",
+      "status": "PASS",
+      "details": "lightIntensity, wavelength, oxygenCount, atpCount, electronRate 均为 Number",
+      "time": "2026-05-13T02:16:36.284Z"
+    },
+    {
+      "name": "数值范围约束正确",
+      "status": "PASS",
+      "details": "光强: 75 (0-100), 波长: 680 (400-700)",
+      "time": "2026-05-13T02:16:36.284Z"
+    },
+    {
+      "name": "记录ID为时间戳",
+      "status": "PASS",
+      "details": "ID格式: 1778638596285",
+      "time": "2026-05-13T02:16:36.285Z"
+    },
+    {
+      "name": "1000帧模拟执行时间 < 100ms",
+      "status": "PASS",
+      "details": "实际耗时: 3ms, 每秒: 333333帧",
+      "time": "2026-05-13T02:16:36.288Z"
+    },
+    {
+      "name": "动画对象及时清理(无内存泄漏)",
+      "status": "FAIL",
+      "details": "当前活动对象数: 656",
+      "time": "2026-05-13T02:16:36.289Z"
+    },
+    {
+      "name": "内存占用稳定",
+      "status": "PASS",
+      "details": "内存变化: -0.16 MB",
+      "time": "2026-05-13T02:16:36.289Z"
+    },
+    {
+      "name": "完整参数验证通过",
+      "status": "PASS",
+      "details": "必需参数: lightIntensity, wavelength",
+      "time": "2026-05-13T02:16:36.290Z"
+    },
+    {
+      "name": "缺失参数返回400错误",
+      "status": "PASS",
+      "details": "缺少 wavelength 应被拒绝",
+      "time": "2026-05-13T02:16:36.290Z"
+    },
+    {
+      "name": "字符串数值正确转换",
+      "status": "PASS",
+      "details": "'75' -> 75, '680nm' -> 680",
+      "time": "2026-05-13T02:16:36.290Z"
+    },
+    {
+      "name": "边界值被正确处理",
+      "status": "PASS",
+      "details": "负值和超范围值应被限制或拒绝",
+      "time": "2026-05-13T02:16:36.290Z"
+    }
+  ],
+  "passed": 16,
+  "failed": 2,
+  "summary": {
+    "totalTests": 18,
+    "passed": 16,
+    "failed": 2,
+    "passRate": "88.9"
+  },
+  "data": {
+    "lightSaturation": [
+      {
+        "intensity": 0,
+        "expectedRate": 0
+      },
+      {
+        "intensity": 10,
+        "expectedRate": 5
+      },
+      {
+        "intensity": 20,
+        "expectedRate": 10
+      },
+      {
+        "intensity": 30,
+        "expectedRate": 15
+      },
+      {
+        "intensity": 40,
+        "expectedRate": 20
+      },
+      {
+        "intensity": 50,
+        "expectedRate": 25
+      },
+      {
+        "intensity": 60,
+        "expectedRate": 30
+      },
+      {
+        "intensity": 70,
+        "expectedRate": 35
+      },
+      {
+        "intensity": 80,
+        "expectedRate": 40
+      },
+      {
+        "intensity": 90,
+        "expectedRate": 40
+      },
+      {
+        "intensity": 100,
+        "expectedRate": 40
+      }
+    ],
+    "wavelengthEfficiency": [
+      {
+        "wavelength": 400,
+        "efficiency": 0.85
+      },
+      {
+        "wavelength": 430,
+        "efficiency": 1
+      },
+      {
+        "wavelength": 450,
+        "efficiency": 0.9
+      },
+      {
+        "wavelength": 500,
+        "efficiency": 0.65
+      },
+      {
+        "wavelength": 550,
+        "efficiency": 0.4
+      },
+      {
+        "wavelength": 600,
+        "efficiency": 0.6
+      },
+      {
+        "wavelength": 650,
+        "efficiency": 0.85
+      },
+      {
+        "wavelength": 680,
+        "efficiency": 1
+      },
+      {
+        "wavelength": 700,
+        "efficiency": 0.9
+      }
+    ],
+    "performance": {
+      "duration": 3,
+      "totalObjects": 656
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>光合作用光反应模拟实验</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>光合作用光反应模拟实验</h1>
+            <p>探索类囊体膜上的光系统II和光系统I的电子传递过程</p>
+        </header>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="canvas-container">
+                    <canvas id="simulationCanvas" width="900" height="500"></canvas>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="lightIntensity">
+                            光强: <span id="intensityValue">50</span>%
+                        </label>
+                        <input type="range" id="lightIntensity" min="0" max="100" value="50">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="wavelength">
+                            波长: <span id="wavelengthValue">680</span> nm
+                        </label>
+                        <input type="range" id="wavelength" min="400" max="700" value="680">
+                        <div class="wavelength-preview" id="wavelengthPreview"></div>
+                    </div>
+
+                    <div class="control-group">
+                        <button id="startBtn" class="btn btn-primary">开始模拟</button>
+                        <button id="pauseBtn" class="btn btn-secondary">暂停</button>
+                        <button id="resetBtn" class="btn btn-secondary">重置</button>
+                        <button id="saveBtn" class="btn btn-success">保存记录</button>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">氧气释放量</span>
+                        <span class="stat-value" id="oxygenLevel">0</span>
+                        <span class="stat-unit">O₂ molecules</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">ATP产率</span>
+                        <span class="stat-value" id="atpLevel">0</span>
+                        <span class="stat-unit">ATP molecules</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">电子传递速率</span>
+                        <span class="stat-value" id="electronRate">0</span>
+                        <span class="stat-unit">e⁻/s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <h3>电子传递速率曲线</h3>
+                <canvas id="chartCanvas" width="350" height="300"></canvas>
+                
+                <div class="experiment-records">
+                    <h4>实验记录</h4>
+                    <div id="recordsList" class="records-list">
+                        <p class="no-records">暂无记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="simulation.js"></script>
+    <script src="chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
